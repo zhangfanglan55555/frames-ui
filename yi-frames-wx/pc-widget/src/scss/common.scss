@@ -1,0 +1,190 @@
+// 公用定义文件
+@charset "UTF-8";
+@import "_mixin.scss";
+.yi-frames{
+	// 主色
+	.link{
+		color: $link;
+	}
+	.link-hover{
+		color: $linkHover;
+	}
+	.link-visited{
+		color: $linkVisited;
+	}
+
+	.primary{
+		color: $primary;
+	}
+	.success{
+		color: $success;
+	}
+	.danger{
+		color: $danger;
+	}
+	.warning{
+		color: $warning;
+	}
+	.stress{
+		color: $stress;
+	}
+	.info{
+		color: $info;
+	}
+	// 辅助色 end
+
+	.base{
+		color: $base;
+	}
+	.gray{
+		color: $gray;
+	}
+	.grayer{
+		color: $grayer;
+	}
+	.disa{
+		color: $disa;
+	}
+	.white{
+		color: $white;
+	}
+	// 灰色系 end
+
+	.fs12{
+		font-size: $fs12;
+	}
+	.fs14{
+		font-size: $fs14;
+	}
+	.fs16{
+		font-size: $fs16;
+	}
+	.fs18{
+		font-size: $fs18;
+	}
+	.fs20{
+		font-size: $fs20;
+	}
+	.fs22{
+		font-size: $fs22;
+	}
+	.fs24{
+		font-size: $fs24;
+	}
+	.fs26{
+		font-size: $fs26;
+	}
+	.fs28{
+		font-size: $fs28;
+	}
+	.fs30{
+		font-size: $fs30;
+	}
+	// 字体大小 end
+
+	h1,
+	.h1{
+		font-size: $fsh1;
+	}
+	h2,
+	.h2{
+		font-size: $fsh2;
+	}
+	h3,
+	.h3{
+		font-size: $fsh3;
+	}
+	h4,
+	.h4{
+		font-size: $fsh4;
+	}
+	h5,
+	.h5{
+		font-size: $fsh5;
+	}
+	h6,
+	.h6{
+		font-size: $fsh6;
+	}
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6{
+		font-weight: bold;
+		line-height: $fshLineH;
+	}
+	// 标题 end
+
+	.clear{
+		height: 0;
+		clear: both;
+		overflow: hidden;
+	}
+	.clearfix {
+		overflow: hidden;
+		zoom: 1;
+		&:after {
+			content: "";
+			display: block;
+			height: 0;
+			clear: both;
+			overflow: hidden;
+			visibility: hidden;
+		}
+	}
+	// 清除浮动 end
+
+	.yi-fl{
+		float: left !important;
+	}
+	.yi-fr{
+		float: right !important;
+	}
+	// 浮动 end
+
+	.yi-tl{
+		text-align: left !important;
+	}
+	.yi-tc{
+		text-align: center !important;
+	}
+	.yi-tr{
+		text-align: right !important;
+	}
+	// 对齐方式 end
+
+	.hide{
+		display: none;
+	}
+	.block{
+		display: block;
+	}
+	// 显示隐藏 end
+
+	@for $i from 1 to 7 {
+		.mt#{$i*5} {
+		margin-top: #{$i*5}px !important;
+		}
+		.mr#{$i*5} {
+		margin-right: #{$i*5}px !important;
+		}
+		.mb#{$i*5} {
+		margin-bottom: #{$i*5}px !important;
+		}
+		.ml#{$i*5} {
+		margin-left: #{$i*5}px !important;
+		}
+	}
+	// 外边距 end
+
+	.yi-mask{
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 888;
+		display: none;
+		background-color: $mask-bg;
+		filter: progid:DXImageTransform.Microsoft.gradient(enabled='false', startColorstr='#{ie-hex-str($mask-bg)}', endColorstr='#{ie-hex-str($mask-bg)}');
+	}
+	// 透明弹层 end
+}

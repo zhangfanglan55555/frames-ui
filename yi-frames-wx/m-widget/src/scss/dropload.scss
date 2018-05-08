@@ -1,0 +1,42 @@
+/*
+ * @Author: matianye@ 
+ * @Date: 2018-03-19 11:15:28 
+ * @Last Modified by: matianye@
+ * @Last Modified time: 2018-04-16 14:23:46
+ */
+// dropload.css
+@charset "UTF-8";
+@import "_mixin.scss";
+
+.dropload-up,
+.dropload-down {
+	position: relative;
+	width: 100%;
+	color: #666;
+	font-size: 28px;
+	line-height: 88px;
+	text-align: center;
+	.dropload-load{
+		span{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.loading {
+			margin: 10px;
+			height: 20px;
+			width: 20px;
+			border: 2px solid #ccc;
+			border-bottom-color: transparent;
+			border-radius: 20px;
+			animation: loading .75s linear infinite;
+		}
+	}
+}
+@keyframes loading {
+    0% {
+        -webkit-transform: rotate(0)
+    }
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}

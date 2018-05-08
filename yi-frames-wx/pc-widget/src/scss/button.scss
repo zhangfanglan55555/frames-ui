@@ -1,0 +1,155 @@
+// button
+@charset "UTF-8";
+@import "_mixin.scss";
+
+.yi-frames{
+	.yi-btn {
+		position: relative;
+		display: inline-block;
+		text-align: center;
+		border-radius: 4px;
+		box-sizing: border-box;
+		// 公用 end
+
+		&.block{
+			display: block;
+			width: 100%;
+		}
+		// 块级展示 end
+		
+	}
+	// button end
+
+	@mixin yiBtn(
+		$btnPadd,
+		$btnMinW,
+		$btnColor,
+		$btnFsize,
+		$btnLineH,
+		$btnBor,
+		$btnBgC,
+		
+		$btnLgPadd,
+		$btnLgMinW,
+		$btnLgFsize,
+		
+		$btnSmPadd,
+		$btnSmMinW,
+		$btnSmFsize,
+		
+		$btnXsPadd,
+		$btnXsMinW,
+		$btnXsFsize,
+
+		$btnPrimaryColorBor,
+		$btnPrimaryBgC,
+		$btnPrimaryBorderColorBor,
+		$btnPrimaryBorderBgC,
+
+		$btnDangerColorBor,
+		$btnDangerBgC,
+		$btnDangerBorderColorBor,
+		$btnDangerBorderBgC,
+		
+		$btnWarningColorBor,
+		$btnWarningBgC,
+		$btnWarningBorderColorBor,
+		$btnWarningBorderBgC,
+
+		$btnHollowBgC,
+		
+		$btnDisaColor,
+		$btnDisaBor,
+		$btnDisaBgC,
+
+		$btnRadius,
+
+		$btnLoadBgImgPl,
+		$btnLoadBgImg,
+		$btnLoadBgImgPosition
+
+	) {
+		padding: $btnPadd;
+		min-width: $btnMinW;
+		color: $btnColor;
+		font-size: $btnFsize;
+		line-height: $btnLineH;
+		border: 1px solid $btnBor;
+		background-color: $btnBgC;
+		// 基础
+
+		&.lg{
+			padding: $btnLgPadd;
+			min-width: $btnLgMinW;
+			font-size: $btnLgFsize;
+		}
+		&.sm{
+			padding: $btnSmPadd;
+			min-width: $btnSmMinW;
+			font-size: $btnSmFsize;
+		}
+		&.xs{
+			padding: $btnXsPadd;
+			min-width: $btnXsMinW;
+			font-size: $btnXsFsize;
+		}
+		// 大小
+
+		&.primary{
+			color: $btnPrimaryColorBor;
+			border-color: $btnPrimaryColorBor;
+			background-color: $btnPrimaryBgC;
+			&.border{
+				color: $btnPrimaryBorderColorBor;
+				border-color: $btnPrimaryBorderColorBor;
+				background-color: $btnPrimaryBorderBgC;
+			}
+		}
+		&.danger{
+			color: $btnDangerColorBor;
+			border-color: $btnDangerColorBor;
+			background-color: $btnDangerBgC;
+			&.border{
+				color: $btnDangerBorderColorBor;
+				border-color: $btnDangerBorderColorBor;
+				background-color: $btnDangerBorderBgC;
+			}
+		}
+		&.warning{
+			color: $btnWarningColorBor;
+			border-color: $btnWarningColorBor;
+			background-color: $btnWarningBgC;
+			&.border{
+				color: $btnWarningBorderColorBor;
+				border-color: $btnWarningBorderColorBor;
+				background-color: $btnWarningBorderBgC;
+			}
+		}
+		&.hollow{
+			background-color: $btnHollowBgC;
+		}
+		// 类型
+		&.disabled,
+		&[disabled="disabled"]{
+			cursor: not-allowed;
+			color: $btnDisaColor;
+			border-color: $btnDisaBor;
+			background-color: $btnDisaBgC;
+		}
+		// 禁用状态 end
+
+		&.round{
+			border-radius: $btnRadius;
+		}
+		// 圆角
+
+		&.load{
+			padding-left: $btnLoadBgImgPl;
+			background: url($btnLoadBgImg) no-repeat $btnLoadBgImgPosition;
+		}
+		// 加载
+	}
+	.yi-btn{
+		@include yiBtn($yiBtnValueMap...);
+	}
+}

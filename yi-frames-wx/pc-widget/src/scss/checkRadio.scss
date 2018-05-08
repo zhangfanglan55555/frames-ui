@@ -1,0 +1,164 @@
+// checkbox
+@charset "UTF-8";
+@import "_mixin.scss";
+
+.yi-frames{
+	.yi-radio,
+	.yi-checkbox{
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		font-size: 0;
+		line-height: 1;
+		.cr-icon,
+		.cr-text{
+			position: relative;
+			display: inline-block;
+			overflow: hidden;
+			vertical-align: middle;
+		}
+		// public end
+
+		.cr-icon{
+			width: 20px;
+			height: 20px;
+		}
+		// icon end
+	}
+
+
+	@mixin yiCheck(
+		$ChcTextMl,
+		$ChcTextColor,
+		$ChcTextFsize,
+		$ChcTextLineH,
+		$ChcActTextColor,
+		$ChcDisaTextColor,
+		$ChcDisaActTextColor
+	){
+		cursor: pointer;
+		.cr-icon{
+			background: url(//img1.bitautoimg.com/das/fe/yi-widget/pc-widget/other/checkRadio2X.png) no-repeat 0 -22px / 44px 86px;
+		}
+		.cr-text{
+			margin-left: $ChcTextMl;
+			color: $ChcTextColor;
+			font-size: $ChcTextFsize;
+			line-height: $ChcTextLineH;
+		}
+		// 文字样式 end
+		&.block{
+			display: block;
+		}
+		// 块级元素 end
+
+		&.checked{
+			.cr-icon{
+				background-position: 0 -66px;
+			}
+			.cr-text{
+				color: $ChcActTextColor;
+			}
+		}
+		// 选中样式 end
+
+		&.disabled{
+			cursor: no-drop;
+			.cr-icon{
+				background-position: 0 0;
+			}
+			.cr-text{
+				color: $ChcDisaTextColor;
+			}
+		}
+		// 禁用样式 end
+
+		&.disabled.checked{
+			cursor: no-drop;
+			.cr-icon{
+				background-position: 0 -44px;
+			}
+			.cr-text{
+				color: $ChcDisaTextColor;
+			}
+		}
+		// 禁用选中状态 end
+	}
+	// checkbox end
+
+
+
+	@mixin yiRadio(
+		$RdoTextMl,
+		$RdoTextColor,
+		$RdoTextFsize,
+		$RdoTextLineH,
+		$RdoActTextColor,
+		$RdoDisaTextColor,
+		$RdoDisaActTextColor
+	){
+		.rdo-label{
+			display: inline-block;
+			vertical-align: top;
+			cursor: pointer;
+		}
+		.cr-icon{
+			background: url(//img1.bitautoimg.com/das/fe/yi-widget/pc-widget/other/checkRadio2X.png) no-repeat -24px -22px / 44px 86px;
+		}
+		.cr-text{
+			margin-left: $RdoTextMl;
+			color: $RdoTextColor;
+			font-size: $RdoTextFsize;
+			line-height: $RdoTextLineH;
+		}
+		// 文字样式 end
+
+		.rdo-label{
+			&.block{
+				display: block;
+			}
+			// 块级元素 end
+
+			&.checked{
+				.cr-icon{
+					background-position: -24px -66px;
+				}
+				.cr-text{
+					color: $RdoActTextColor;
+				}
+			}
+			// 选中样式 end
+
+			&.disabled{
+				cursor: no-drop;
+				.cr-icon{
+					background-position: -24px 0;
+				}
+				.cr-text{
+					color: $RdoDisaTextColor;
+				}
+			}
+			// 禁用样式 end
+
+			&.disabled.checked{
+				.cr-icon{
+					background-position: -24px -44px;
+				}
+				// .cr-text{
+				// 	color: $RdoDisaTextColor;
+				// }
+			}
+			// 禁用选中状态 end
+		}
+	}
+	// radio End
+
+
+	.yi-checkbox{
+		@include yiCheck($yicheckValueMap...)
+	}
+
+	.yi-radio{
+		@include yiRadio($yiRadioValueMap...)
+	}
+}

@@ -1,0 +1,22 @@
+//- mixin checkRadio(choice)
+//- 	label.yi-choice(class!= choice.type, class!= choice.block class!= choice.checked, class!= choice.disabled)&attributes(attributes)
+//- 		//- input.cr-ipt(type!= choice.type, name!= choice.name checked!= choice.checked, disabled!= choice.disabled)
+//- 		span.cr-icon(class!= choice.round)
+//- 		if choice.text
+//- 			span.cr-text!= choice.text
+
+
+mixin radio(...radios)
+	.yi-radio&attributes(attributes)
+		each radio in radios
+			label.rdo-label(class!= radio.rdoChecked, class!= radio.rdoDisabled, class!= radio.rdoBlock name!= radio.rdoName)
+				span.cr-icon
+				if radio.rdoText
+					span.cr-text!= radio.rdoText
+
+
+//- mixin checkBox(check)
+//- 	label.yi-checkbox(class!= check.checked, class!= check.disabled, class!= check.block)&attributes(attributes)
+//- 		span.cr-icon
+//- 		if check.text
+//- 			span.cr-text!= check.text

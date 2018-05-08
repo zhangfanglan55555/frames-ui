@@ -1,0 +1,14 @@
+mixin alert(...items)
+	.yi-alert&attributes(attributes)
+		ul
+			each item in items
+				li.item(class!= item.type)
+					//- if item.closeIcon
+					//- 	i.close ×
+					//- if item.closeText
+					//- 	span.close!= item.closeText
+					if(item.closeType == 'icon')
+						i.close ×
+					else
+						span.close!= item.closeType
+					.text!= item.text

@@ -1,0 +1,18 @@
+//- mixin input(items)
+//- 	.yi-input(class!=items.round, disabled!= items.disabled)&attributes(attributes)
+//- 		input.ipt(type!= items.type, size!= items.size, value!= items.value, placeholder!= items.placeholder, disabled!= items.disabled)&attributes(attributes)
+
+mixin input(...items)
+	each item in items
+		input.yi-input(
+			type="text"
+			placeholder!= item.placeholder
+			value!= item.value
+			disabled!= item.disabled
+			class!= item.size
+			class!= item.disabled
+			class!= item.date
+			class!= item.class
+			id!= item.id
+		)&attributes(attributes)
+		

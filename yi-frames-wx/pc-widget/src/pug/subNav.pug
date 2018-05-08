@@ -1,0 +1,44 @@
+mixin subNav(...items)
+  .yi-subnav#MainNav
+	ul
+	  each item in items
+		- var cls = 'menu-icon menu-icon-' +  item.iconName
+		- var clsNew = 'icon icon-'+ item.new
+		li.nav-item
+		  a.nav-item-link(href='javascript:void(0);' class= item.active)
+			i(class=cls)
+			| #{item.title}
+			if item.new
+			  i(class=clsNew)
+			//- i.icon.icon-down
+		  if item.value
+			.nav-item-submenu(class= item.classSub)
+			  ul
+				each i in item.value
+				  li
+					a.submenu-item-link(href="javascript:;")
+					  | #{i}
+		  .line-between(class= item.class)
+
+
+
+
+mixin subNav2(...items)
+  .yi-subnav#MainNav
+	ul
+	  each item in items
+		- var cls = 'menu-icon menu-icon-' +  item.iconName
+		- var clsNew = 'icon icon-'+ item.new
+		li.nav-item
+		  a.nav-item-link(class= item.active href=item.link)
+			i(class=cls)
+			| #{item.title}
+			if item.new
+			  i(class=clsNew)
+		  if item.value
+			.nav-item-submenu(class= item.classSub)
+			  ul
+				each i in item.value
+				  li
+					a.submenu-item-link(href=i[0]) #{i[1]}
+		  .line-between(class= item.class)

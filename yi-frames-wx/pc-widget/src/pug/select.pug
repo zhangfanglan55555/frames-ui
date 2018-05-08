@@ -1,0 +1,15 @@
+include while.pug
+
+mixin select(...items)
+	each item in items
+		select.yi-select(
+				disabled!= item.disabled
+				class!= item.disabled
+				class!= item.size
+				class!= item.class
+				id!= item.id
+			)&attributes(attributes)
+				+while(item.number)
+					option!= item.optionText
+				
+

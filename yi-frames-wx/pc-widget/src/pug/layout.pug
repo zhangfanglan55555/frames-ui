@@ -1,0 +1,41 @@
+block pugConfig
+include _base/_head.pug
+include _base/_layout.pug
+include _base/_footScript.pug
+
+//- Basic
+include button.pug
+
+//- Layout
+//- include flex.pug
+//- include float.pug
+
+//- Forms
+//- include checkRadio.pug
+//- include select.pug
+include input.pug
+//- include forms.pug
+
+//- 视图层
+include alert.pug
+//- include modal.pug
+//- include toast.pug
+
+//- //- Navigation
+//- include tabs.pug
+
+//- doctype html
+//- html(lang="zh-CN")
+//- 	+head(pugConfig.titleText,pugConfig.cssName,pugConfig.isNotSpa)
+//- 	body(class=pugConfig.bodyClassName)
+//- 		block bodyContent
+//- 		+footScript(pugConfig.confName)
+doctype html
+html(lang="zh-CN")
+	+head(pugConfig.titleText, pugConfig.cssName, pugConfig.isNotSpa, pugConfig.hrefUrl)
+	body(class!= pugConfig.bodyClassName)
+		.yi-frames
+			block header
+			+layout(pugConfig.column)
+			block footer
+	+footScript(pugConfig.confName, pugConfig.isNotSpa, pugConfig.hrefUrl)

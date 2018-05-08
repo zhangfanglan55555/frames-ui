@@ -1,0 +1,25 @@
+mixin modal(modals)
+	.yi-modal(class!=modals.size)&attributes(attributes)
+		if modals.close
+			//- .ml-close.close!= modals.close
+			.ml-close.close ×
+		if modals.title
+			.ml-hd(class!= modals.titAlign)!= modals.title
+		if modals.text
+			.ml-bd(class!= modals.textAlign class!= modals.scroll)
+				.text!= modals.text
+		
+		.ml-ft(class!= modals.btnAlign)
+			if modals.btnOk
+				button.yi-btn.btnok(type="button" class!=modals.btnOkClass)!= modals.btnOk
+			if modals.btnNo
+				button.yi-btn.btnno(type="button" class!=modals.btnNoClass)!= modals.btnNo
+			.yi-fl
+				if modals.noRmding
+					label.yi-checkbox.ml-ftcon.ml-rmding
+						span.cr-icon
+						span.cr-text!= modals.noRmding
+				if modals.otherText
+					.ml-ftcon.ml-other(class!= modals.otherClass)!= modals.otherText
+		if block
+			block

@@ -1,0 +1,53 @@
+/*
+ * @Author: matianye@ 
+ * @Date: 2018-03-23 13:41:54 
+ * @Last Modified by: matianye@
+ * @Last Modified time: 2018-04-27 15:15:48
+ */
+// select
+@charset "UTF-8";
+@import "_mixin.scss";
+
+.yi-frames{
+    @mixin yiSelect(
+        $selPll,
+        $selW,
+        $selH,
+        $selBor,
+        $selBgC,
+        $selLgW,
+        $selSmW,
+        
+        $selDisaColor,
+        $selDisaBor,
+        $selDisaBgC
+    ){
+        padding: $selPll;
+        width: $selW;
+        height: $selH;
+        border: 1px solid $selBor;
+        background-color: $selBgC;
+        // appearance:none;
+        // 默认 end
+
+        &.lg{
+            width: $selLgW;
+        }
+        &.sm{
+            width: $selSmW;
+        }
+        // 尺寸 end
+
+        &.disabled{
+            color: $selDisaColor;
+            border-color: $selDisaBor;
+            background-color: $selDisaBgC;
+        }
+        // 禁用 end
+    }
+    // end
+
+    .yi-select{
+        @include yiSelect($yiSelectValueMap...)
+    }
+}

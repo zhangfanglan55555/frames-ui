@@ -1,0 +1,21 @@
+mixin layout(column)
+	.main-body
+		if(column == 1)
+			block mainLeft
+		//- 单列布局 end
+
+		if(column == 2)
+			.main-aside.yi-col2-1
+				block mainLeft
+			.main-content.yi-col2-2
+				block mainContent
+		//- 双列左右布局 end
+
+		if(column == 3)
+			.main-aside.yi-col3-1
+				block mainLeft
+			.main-content.yi-col3-2
+				block mainContent
+			.main-aside.yi-col3-3
+				block mainRight
+		//- 三列左中右布局 end

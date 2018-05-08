@@ -1,0 +1,33 @@
+{
+  "name": "yi-frames-js",
+  "version": "1.7.0",
+  "description": "The javaScript widgets and widgets for Yi-Frames",
+  "keywords": [
+    "generator-yi-frames",
+    "yi-frames",
+    "yi-frames-js"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Mapk Volkov"
+  },
+  "main": "yiframes.js",
+  "bundleDependencies": false,
+  "dependencies": {
+    "canvas2image": "^1.0.5",
+    "echarts": "^4.0.2",
+    "fastclick": "^1.0.6",
+    "html2canvas": "^1.0.0-alpha.5",
+    "jspdf": "^1.3.5",
+    "lodash": "^3.10.1",
+    "photoclip": "^3.3.6",
+    "qrcode": "^1.2.0",
+    "swiper": "^4.0.0"
+  },
+  "deprecated": false,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "_from": "yi-frames-js@1.7.0",
+  "_resolved": "http://registry.npm.taobao.org/yi-frames-js/download/yi-frames-js-1.7.0.tgz"
+}

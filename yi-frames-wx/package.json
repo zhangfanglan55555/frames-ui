@@ -1,0 +1,19 @@
+{
+  "name": "yi-frames-wx",
+  "version": "0.0.3",
+  "description": "The Widgets of Yi-frames for WeChat Mini Program",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yi-frames-wx",
+    "yi-frames",
+    "wechat",
+    "wx"
+  ],
+  "author": "Mapk Volkov",
+  "license": "MIT",
+  "_from": "yi-frames-wx@0.0.3",
+  "_resolved": "http://registry.npm.taobao.org/yi-frames-wx/download/yi-frames-wx-0.0.3.tgz"
+}

@@ -1,0 +1,46 @@
+
+//- mixin forms(forms)
+//- 	.yi-row(class!= forms.rowClass)&attributes(attributes)
+//- 		if forms.colOneClass || colOneText
+//- 			.yi-col(class!= forms.colOneClass)!= forms.colOneText
+//- 		.yi-col(class!= forms.colTwoClass)
+//- 			if forms.colTwoText
+//- 				.col-cont!= forms.colTwoText
+//- 		if forms.colOtClass
+//- 			.yi-col(class!= forms.colOtClass)
+//- 				if block
+//- 					block
+
+
+mixin forms(...items)
+	each item in items
+		if item.colOtClass
+			.yi-row(class!= item.rowClass)&attributes(attributes)
+				if item.colOneClass || colOneText
+					.yi-col(class!= item.colOneClass)!= item.colOneText
+				if item.colOtClass
+					block
+		else
+			.yi-row(class!= item.rowClass)&attributes(attributes)
+				if item.colOneClass || colOneText
+					.yi-col(class!= item.colOneClass)!= item.colOneText
+					.yi-col(class!= item.colTwoClass)
+						if item.colTwoText
+							.col-cont!= item.colTwoText
+						else
+							block
+
+
+
+
+
+//- mixin forms(form)
+//- 	.yi-flex.yi-input&attributes(attributes)
+//- 		if form.hdTxt
+//- 			.gp-tit!= form.hdTxt
+//- 		label.flex1.label
+//- 			input.ipt(type!= form.type, value!= form.value, placeholder!= form.placeholder, disabled!= form.disabled)&attributes(attributes)
+//- 		if form.yzmText
+//- 			a.yzm-txt.disa(href="javascript:;")!= form.yzmText
+//- 		if form.yzmImg
+//- 			img.yzm-img(src="../images/_yzm.jpg", title="验证码图")

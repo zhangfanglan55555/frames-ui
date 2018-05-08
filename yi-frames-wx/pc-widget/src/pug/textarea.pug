@@ -1,0 +1,16 @@
+mixin textarea(...items)
+	each item in items
+		.yi-txta(
+			class!= item.txtaSize
+			class!= item.txtaDisabled
+		)&attributes(attributes)
+			textarea.txta(
+					type="text"
+					placeholder!= item.txtaPlh
+					disabled!= item.txtaDisabled
+					class!= item.txtaDisabled
+					class!= item.txtaClass
+					id!= item.txtaId
+				)!= item.txtaVal
+			if item.txtaNum
+				p.num!= item.txtaNum
